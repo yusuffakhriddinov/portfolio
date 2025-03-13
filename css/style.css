@@ -1,0 +1,312 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../sf-pro-display/SFPRODISPLAYREGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    font-size: 18px;
+    flex-wrap: wrap;
+
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+}
+
+.logo:hover {
+    background-color: rgb(240, 240, 240);
+    
+}
+
+.logo m {
+    color: rgb(66, 9, 237);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.link {
+    margin: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.link:hover {
+    background-color: rgb(245, 245, 245);
+    color: rgb(66, 9, 237);
+    border-radius: 5px;
+}
+
+/* Main Section */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+    padding: 0 5%;
+    
+}
+
+
+.container .mid-part {
+    display: inline-block;
+    color: rgb(24, 24, 27);
+    font-size: 60px; /* Responsive font size */
+    font-weight: 600;
+}
+
+.container .mid-part ol {
+    padding: 0;
+    margin: 0;
+    text-align: start;
+    list-style: none;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2.5s steps(50) infinite alternate;
+}
+
+.container .mid-part ol li {
+    animation: slide 15s steps(3) infinite;
+}
+
+.container .mid-part ol li span {
+    border-right: 0.4rem solid #fff;
+    white-space: nowrap;
+    animation: cursor 0.8s step-end infinite;
+    padding-right: 5px;
+}
+
+@keyframes slide {
+    100% {
+        transform: translateY(-300%);
+    }
+}
+
+@keyframes cursor {
+    50% {
+        border-color: black;
+    }
+}
+
+@keyframes typing {
+    0%, 10% {
+        width: 0%;
+    }
+    70%, 100% {
+        width: 100%;
+    }
+}
+
+.container p {
+    color: rgb(82, 82, 91);
+    font-size: 18px;
+    margin: 30px 0;
+    max-width: 800px;
+    line-height: 1.5rem;
+}
+.container p t {
+    color: rgb(153, 0, 0);
+}
+
+
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .logo {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .links {
+        justify-content: center;
+        
+    }
+    .link{
+        padding:0;
+    }
+
+    .container {
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container .mid-part {
+        font-size: clamp(30px, 6vw, 50px);
+        line-height: 1.3rem;
+        padding-left:5px;
+    }
+
+    .container .mid-part ol{
+        padding-left:5px;
+    }
+
+    .container p {
+        font-size:14px;
+        margin-top:0px;
+        margin-bottom:0px;
+        max-width:100%;
+        
+    }
+}
+
+/* Optimize eveything below */
+.about-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal columns */
+    align-items: center;
+    justify-content: center;
+    gap: 5%; /* Ensures equal spacing */
+    padding: 4% 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+    background-color: rgb(245, 245, 245);
+    height: auto;
+    margin-bottom:5%;
+}
+
+
+.about-me .description {
+    max-width: 90%;
+    text-align: justify;
+}
+
+.about-me h1 {
+    font-size: 28px;
+}
+
+.about-me p {
+    color: rgb(82, 82, 91);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-me .image {
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+    width: 100%;
+    max-width: 450px; /* Adjusted for better spacing */
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin: auto; /* Ensures equal spacing from text and border */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.about-me .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container */
+    border-radius: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-me {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-me .description {
+        max-width: 90%;
+    }
+
+    .about-me .image {
+        width: 100%; /* Ensure it does not overflow */
+        max-width: 350px;
+        overflow: hidden; /* Prevents image from breaking layout */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .about-me .image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-me h1 {
+        font-size: 24px;
+    }
+
+    .about-me p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 40px 5%;
+    font-size: 14px;
+    color: rgb(82, 82, 91);
+    
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 8%;
+        font-size: 13px; /* Slightly smaller font for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 10%;
+        font-size: 12px; /* Further reduces font size for smaller screens */
+    }
+}
+
+
+
+
